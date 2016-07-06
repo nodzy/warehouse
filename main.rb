@@ -40,12 +40,12 @@ class Main
   basket1.print_basket
   basket1.remove(product1)
   basket1.print_basket
-  shop2.sale(product1, 0.20)
-  shop2.sale(product2, 0.5)
-  shop2.print_stock                           # przecena
+  shop2.sale(product1, 0.20)  #przecena
+  shop2.sale(product2, 0.5)  
+  shop2.print_stock                           
   basket2 = Basket.new(shop2)
   2.times{basket2.add(product1)}
   2.times{basket2.add(product2)}
-  basket2.print_basket                        # przecena
+  basket2.print_basket                        
   
 end
