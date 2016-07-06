@@ -13,7 +13,7 @@ class Basket
       shop.products.
         delete_at(shop.products.
           find_index{|p| p.id == product.id})
-	    products << product
+      products << product
     else
       p "Item out of stock"
     end
