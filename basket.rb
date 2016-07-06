@@ -46,12 +46,4 @@ class Basket
     puts "\tSum with VAT: #{Product.price_formatted(final_sum)}\n"
   end
 
-  def sum
-    products.map(&:price).inject(:+)
-  end
-
-  def final_sum
-    products.map(&:price_with_vat).inject(:+)
-  end
-
 end
