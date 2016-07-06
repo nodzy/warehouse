@@ -3,7 +3,6 @@ class Main
   require_relative "./product"
   require_relative "./warehouse"
 
-
   product1 = Product.new(name:"Book", price: 20, vat: 0.08)
   product2 = Product.new(name:"Pen", price: 5, vat: 0.05)
   product3 = Product.new(name:"Bag", price: 50, vat: 0.23)
@@ -48,11 +47,5 @@ class Main
   2.times{basket2.add(product1)}
   2.times{basket2.add(product2)}
   basket2.print_basket                        # przecena
-       
-
   
-
- 
-
-
 end
