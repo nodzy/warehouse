@@ -18,7 +18,20 @@ class Warehouse
             find_index{|p| p.id == product.id})
     end
   end
+  
+  def sale(product, per)
+    product.price -= (product.price * per)
+    product.sale = true
+  end
+  
+  def sum_in_stock
+    products.map(&:price).inject(:+)
+  end
 
+  def final_sum_in_stock
+    products.map(&:price_with_vat).inject(:+)
+  end	
+  
   def print_stock
     puts "\n\tCity:\t#{city}\t\tName:\t\tPrice:\t\tQty:"
     products.sort{|a,b| a.name <=> b.name}.
@@ -29,19 +42,6 @@ class Warehouse
     puts "\tSum with VAT: #{Product.price_formatted(final_sum_in_stock)}\n"
     puts "\n\t #{products.select{|p| p.sale == true}.
       uniq.map{|p| p.name}} on sale!" if products.select{|p| p.sale == true}.any?  
-  end
-
-  def sum_in_stock
-    products.map(&:price).inject(:+)
-  end
-
-  def final_sum_in_stock
-    products.map(&:price_with_vat).inject(:+)
-  end	
-
-  def sale(product, per)
-    product.price -= (product.price * per)
-    product.sale = true
   end
 
 end
