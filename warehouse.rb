@@ -14,8 +14,8 @@ class Warehouse
 
   def remove(product)
     if !products.empty?
-	  products.delete_at(products.
-            find_index{|p| p.id == product.id})
+      products.delete_at(products.
+        find_index{|p| p.id == product.id})
     end
   end
   
